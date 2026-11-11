@@ -57,7 +57,14 @@
         if (videoWrap && video) {
             videoWrap.classList.add('wei-video-in');
             const vp = video.play();
-            if (vp && vp.catch) vp.catch(function () {});
+            if (vp && vp.catch) {
+                vp.catch(function () {
+                    endSequence();
+                });
+            }
+            video.addEventListener('error', function () {
+                endSequence();
+            });
 
             videoWatchdog = setTimeout(function () {
                 if (!video.dataset.fading) {
