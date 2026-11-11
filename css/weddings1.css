@@ -1,0 +1,541 @@
+/* ==========================================================================
+   WEDDINGS1 LUXURY CUSTOM STYLES
+   Shaheen Ahmed & Noora Maisoon • Shifa & Ajmal Farhan
+   Saturday, 2nd January 2027 • Meruzila Convention Centre
+   ========================================================================== */
+
+/* Page 1: Artboard Scenery with Stone Arch, Frame, Flowers & Pond (Swans Removed) */
+.front-artboard.artboard-no-swans {
+    background-color: #F9F0E0;
+}
+
+.artboard-scenery-wrap {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 450px;
+    height: 720px;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.artboard-scenery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    filter: contrast(1.02) saturate(1.03);
+}
+
+/* Page 1 Ceremony Title & Date Tag - Fully opaque, sharp, no blur/fading */
+.front-artboard .artboard-ceremony-title {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: translateX(-50%) !important;
+    animation: none !important;
+}
+
+.front-artboard .artboard-date-tag {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: translateX(-50%) !important;
+    animation: none !important;
+}
+
+/* Page 1 Couple Names: Generous container with NO fading, NO clipping, NO blur */
+.front-artboard .artboard-names-wrap.double-wedding {
+    top: 254px;
+    width: 95%;
+    max-width: 360px;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    overflow: visible !important;
+    pointer-events: auto;
+}
+
+.double-wedding .couple-unit {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: visible !important;
+}
+
+/* Solid, rich luxury gold text with zero fading, full opacity, no gradient clip clipping */
+.double-wedding .artboard-name-first,
+.double-wedding .artboard-name-second {
+    font-family: 'Beau Rivage', 'Cormorant Garamond', cursive;
+    font-size: clamp(21px, 5.4vw, 26px);
+    font-weight: 500;
+    line-height: 1.18;
+    letter-spacing: 0.02em;
+    color: #8C6318 !important;
+    background: none !important;
+    -webkit-text-fill-color: #8C6318 !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 1px rgba(120, 80, 15, 0.45) !important;
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    animation: none !important;
+    will-change: auto !important;
+    white-space: nowrap;
+    overflow: visible !important;
+    padding: 2px 14px;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+.front-artboard.artboard-revealed .double-wedding .artboard-name-first,
+.front-artboard.artboard-revealed .double-wedding .artboard-name-second {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.double-wedding .artboard-amp {
+    font-family: 'Beau Rivage', 'Cormorant Garamond', cursive;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0;
+    display: block;
+    color: #8C6318 !important;
+    background: none !important;
+    -webkit-text-fill-color: #8C6318 !important;
+    opacity: 1 !important;
+    filter: drop-shadow(0 1px 3px rgba(255, 255, 255, 0.9)) !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.front-artboard.artboard-revealed .double-wedding .artboard-amp {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Double Wedding Inter-Couple Divider */
+.artboard-wedding-separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 140px;
+    margin: 3px 0;
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+.front-artboard.artboard-revealed .artboard-wedding-separator {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.artboard-wedding-separator .sep-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(166, 125, 43, 0.4), transparent);
+}
+
+.artboard-wedding-separator .sep-symbol {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 11px;
+    color: #8C6318;
+    letter-spacing: 0.12em;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
+}
+
+/* Adjust scroll button position */
+.front-artboard.artboard-no-swans .artboard-scroll-down {
+    top: 485px;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+/* Page 2: Quranic Verse styling below Bismillah */
+.soul-arabic-verse {
+    font-family: 'Amiri', 'Traditional Arabic', serif;
+    font-size: clamp(17px, 4.4vw, 21px);
+    font-weight: 700;
+    line-height: 1.4;
+    color: #8C6318;
+    margin: 4px 0 2px;
+    direction: rtl;
+    text-align: center;
+    text-shadow: 0 1px 5px rgba(255, 255, 255, 0.95), 0 0 14px rgba(212, 175, 55, 0.45);
+    animation: goldShimmerText 3.6s ease-in-out infinite alternate 1.2s;
+}
+
+.artboard-two-souls.revealed .soul-arabic-verse {
+    transition-delay: 0.20s;
+}
+
+.soul-line-quote {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(14px, 3.6vw, 16.5px);
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #a67d2b;
+    text-align: center;
+    text-shadow: 0 1px 5px rgba(255, 255, 255, 0.95), 0 0 10px rgba(212, 175, 55, 0.3);
+    margin-top: 2px;
+}
+
+.artboard-two-souls.revealed .soul-line-quote {
+    transition-delay: 0.40s;
+}
+
+.soul-line-cite {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: clamp(10px, 2.5vw, 11.5px);
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    color: #8C6318;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 3px;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
+}
+
+.artboard-two-souls.revealed .soul-line-cite {
+    transition-delay: 0.60s;
+}
+
+/* Page 3: Sacred Deckled Parchment Double Lineage - Solid Rich Gold, No Fading */
+.section-parchment-lineage.double-lineage .parchment-lineage-container {
+    min-height: 980px;
+    padding: 85px 36px 95px;
+    overflow: visible !important;
+}
+
+.double-lineage .parchment-lineage-content {
+    max-width: 380px;
+    gap: 8px;
+    overflow: visible !important;
+}
+
+.double-lineage .lineage-couple-unit {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    overflow: visible !important;
+}
+
+.double-lineage .lineage-card-block {
+    width: 100%;
+    margin: 2px auto;
+    overflow: visible !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.double-lineage .lineage-card-block.left-slide-block,
+.double-lineage .lineage-card-block.right-slide-block {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+}
+
+/* Page 3 Lineage Names: Completely solid, rich gold, zero edge fading */
+.double-lineage .lineage-name-script {
+    font-family: 'Beau Rivage', 'Playfair Display', cursive, serif;
+    font-size: clamp(34px, 8vw, 44px);
+    font-weight: 400;
+    line-height: 1.12;
+    color: #8C6318 !important;
+    background: none !important;
+    -webkit-text-fill-color: #8C6318 !important;
+    -webkit-background-clip: unset !important;
+    background-clip: unset !important;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.95), 0 0 1px rgba(120, 80, 15, 0.4) !important;
+    margin: 0 0 4px 0;
+    letter-spacing: 0.02em;
+    overflow: visible !important;
+    padding: 2px 12px;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+.double-lineage .lineage-parents-line {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: clamp(12px, 3.2vw, 15px);
+    font-weight: 600;
+    line-height: 1.35;
+    color: #a67d2b;
+    letter-spacing: 0.03em;
+    margin-bottom: 4px;
+    white-space: normal;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.section-parchment-lineage.revealed .lineage-parents-line,
+.revealed .lineage-parents-line {
+    opacity: 1 !important;
+    transform: none !important;
+    text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95), 0 0 16px rgba(212, 175, 55, 0.45);
+    animation: goldShimmerText 3.6s ease-in-out infinite alternate 1.6s;
+}
+
+.double-lineage .lineage-address-line {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(13px, 3.2vw, 15px);
+    font-style: italic;
+    color: #6E5338;
+    line-height: 1.4;
+    text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+/* Red Heart Love Divider between Bride & Groom (Pure Vector SVG) */
+.lineage-heart-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 170px;
+    margin: 10px auto;
+    user-select: none;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.lineage-heart-divider .heart-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(166, 125, 43, 0.5), transparent);
+}
+
+.lineage-heart-divider .heart-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    color: #D32F2F;
+    animation: gentleHeartbeat 2.2s ease-in-out infinite;
+}
+
+.heart-svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    fill: #C43D4B;
+    filter: drop-shadow(0 2px 4px rgba(196, 61, 75, 0.45));
+}
+
+@keyframes gentleHeartbeat {
+    0%, 100% { transform: scale(1); }
+    50%      { transform: scale(1.14); }
+}
+
+/* Vector SVG Icons throughout the page */
+.sparkle-svg {
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    fill: #D4AF37;
+    vertical-align: middle;
+}
+
+.sep-sparkle-svg {
+    width: 9px;
+    height: 9px;
+    display: inline-block;
+    fill: #8C6318;
+    vertical-align: middle;
+}
+
+.sep-amp {
+    font-family: 'Beau Rivage', cursive;
+    font-size: 13px;
+    color: #8C6318;
+    margin: 0 3px;
+}
+
+.time-clock-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+
+.time-clock-svg {
+    width: 13px;
+    height: 13px;
+    display: block;
+    stroke: #8C6318;
+}
+
+.cal-mini-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    flex-shrink: 0;
+    vertical-align: middle;
+}
+
+.cal-svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+    stroke: #8C6318;
+}
+
+.apple-svg {
+    width: 15px;
+    height: 15px;
+    display: block;
+    fill: #8C6318;
+}
+
+.double-lineage .parchment-cross-divider {
+    margin: 18px auto 14px;
+    opacity: 1 !important;
+    transform: scale(1) !important;
+}
+
+/* Page 5: Venue landmark & clean spacing without Dua */
+.venue-landmark {
+    display: block;
+    font-style: normal;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: #8C6318;
+    margin-top: 3px;
+    text-transform: uppercase;
+}
+
+.section-parchment-event .parchment-event-container {
+    min-height: 680px;
+    padding: 85px 36px 95px;
+}
+
+/* Final Page Footer: Centered warm message */
+.final-presence-wrap {
+    max-width: 380px;
+    margin: 10px auto 16px;
+    padding: 12px 18px;
+    text-align: center;
+}
+
+.final-presence-text {
+    font-family: 'Cinzel', 'Playfair Display', Georgia, serif;
+    font-size: clamp(16px, 4.2vw, 20px);
+    font-weight: 600;
+    line-height: 1.6;
+    letter-spacing: 0.08em;
+    color: #8C6318;
+    text-align: center;
+    text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95), 0 0 16px rgba(212, 175, 55, 0.4);
+    animation: goldShimmerText 3.6s ease-in-out infinite alternate 1.2s;
+}
+
+/* Mobile Responsiveness Adjustments - Zero Fading, Generous Margins */
+@media screen and (max-width: 480px) {
+    .artboard-scenery-wrap {
+        width: 100%;
+        max-width: 100vw;
+    }
+
+    .front-artboard .artboard-names-wrap.double-wedding {
+        top: 240px;
+        width: 96%;
+        max-width: 340px;
+        gap: 2px;
+        overflow: visible !important;
+    }
+
+    .double-wedding .artboard-name-first,
+    .double-wedding .artboard-name-second {
+        font-size: 21px;
+        line-height: 1.15;
+        overflow: visible !important;
+        padding: 2px 10px;
+        color: #8C6318 !important;
+        -webkit-text-fill-color: #8C6318 !important;
+    }
+
+    .double-wedding .artboard-amp {
+        font-size: 16px;
+        color: #8C6318 !important;
+        -webkit-text-fill-color: #8C6318 !important;
+    }
+
+    .artboard-wedding-separator {
+        margin: 2px 0;
+        width: 120px;
+    }
+
+    .front-artboard.artboard-no-swans .artboard-scroll-down {
+        top: 450px;
+    }
+
+    .section-parchment-lineage.double-lineage .parchment-lineage-container {
+        min-height: 940px;
+        padding: 78px 18px 85px;
+        overflow: visible !important;
+    }
+
+    .double-lineage .lineage-name-script {
+        font-size: 30px;
+        margin-bottom: 2px;
+        padding: 2px 8px;
+        overflow: visible !important;
+        color: #8C6318 !important;
+        -webkit-text-fill-color: #8C6318 !important;
+    }
+
+    .double-lineage .lineage-parents-line {
+        font-size: 12px;
+        margin-bottom: 2px;
+    }
+
+    .double-lineage .lineage-address-line {
+        font-size: 12px;
+        line-height: 1.38;
+    }
+
+    .lineage-heart-divider {
+        margin: 8px auto;
+        width: 140px;
+    }
+
+    .section-parchment-event .parchment-event-container {
+        min-height: 640px;
+        padding: 75px 20px 85px;
+    }
+
+    .final-presence-wrap {
+        max-width: 320px;
+        padding: 8px 12px;
+    }
+
+    .final-presence-text {
+        font-size: 15.5px;
+        letter-spacing: 0.06em;
+        line-height: 1.55;
+    }
+}

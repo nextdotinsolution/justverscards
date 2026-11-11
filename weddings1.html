@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Wedding Invitation | Shaheen &amp; Noora • Shifa &amp; Ajmal | 2 January 2027</title>
+    <meta name="description"
+        content="Wedding Invitation: Join Us for the Wedding of Shaheen Ahmed &amp; Noora Maisoon and Shifa &amp; Ajmal Farhan on Saturday, 2nd January 2027 (10:30 AM to 2:30 PM) at Meruzila Convention Centre, Elettil, Koduvally.">
+    <meta name="keywords"
+        content="Wedding Invitation, Muslim Wedding, Shaheen Ahmed, Noora Maisoon, Shifa, Ajmal Farhan, Meruzila Convention Centre, Elettil, Koduvally, Kerala Wedding">
+    <meta name="author" content="Shaheen &amp; Noora • Shifa &amp; Ajmal">
+    <link rel="icon" type="image/png" href="images/justversemainlogo.png">
+    <link rel="shortcut icon" type="image/png" href="images/justversemainlogo.png">
+    <link rel="apple-touch-icon" href="images/justversemainlogo.png">
+
+    <!-- Open Graph Meta Tags for WhatsApp, Instagram, and Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Wedding Invitation | Shaheen &amp; Noora • Shifa &amp; Ajmal | 2 January 2027">
+    <meta property="og:description"
+        content="Join Us for the Wedding of Shaheen Ahmed &amp; Noora Maisoon and Shifa &amp; Ajmal Farhan on Saturday, 2nd January 2027 at Meruzila Convention Centre, Elettil, Koduvally.">
+    <meta property="og:image" content="assets/images/gem13.png">
+    <meta property="og:image:secure_url" content="assets/images/gem13.png">
+    <meta property="og:image:type" content="image/png">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wedding Invitation | Shaheen &amp; Noora • Shifa &amp; Ajmal">
+    <meta name="twitter:description"
+        content="Join Us for the Wedding of Shaheen Ahmed &amp; Noora Maisoon and Shifa &amp; Ajmal Farhan on Saturday, 2nd January 2027 at Meruzila Convention Centre, Elettil, Koduvally.">
+    <meta name="twitter:image" content="assets/images/gem13.png">
+
+    <!-- Google Fonts including Amiri for Arabic Script & Calligraphy -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Beau+Rivage&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&family=Ovo&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom Luxury Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/weddings1.css">
+</head>
+
+<body>
+
+    <!-- ==========================================================================
+         CINEMATIC INTRO: ENVELOPE OVERLAY & UNVEIL SEQUENCE
+         ========================================================================== -->
+    <div id="weiOverlay">
+        <div class="wei-envelope-stage">
+            <img id="weiImg" src="images/envelope_cover.png?v=7.0.0"
+                alt="Wedding Invitation - Shaheen &amp; Noora • Shifa &amp; Ajmal" draggable="false">
+            <div id="weiTapWrap" class="wei-tap-center">
+                <div class="wei-tap-badge">
+                    <span class="wei-tap-sparkle">
+                        <svg class="sparkle-svg" viewBox="0 0 24 24" fill="currentColor" width="12" height="12"
+                            aria-hidden="true">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                        </svg>
+                    </span>
+                    <span class="wei-tap-label">Tap to open</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Opening Layer -->
+    <div id="weiVideoWrap">
+        <video id="weiVideo" src="assets/videos/video1.mp4?v=2.0.0" muted playsinline preload="auto"></video>
+        <button id="weiSkipBtn" class="wei-skip-btn">Skip &rarr;</button>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="weiAudio" loop preload="auto">
+        <source src="https://pub-4dc8201144ca418fb604349c73e8c724.r2.dev/Einaudi_%20Divenire%20(1)%20(1).mp3"
+            type="audio/mp3">
+        <source src="assets/audio/a_thousand_years.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Floating Play/Pause Button -->
+    <div id="weiAudioBtn">
+        <svg id="weiIconPause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display:block">
+            <rect x="6" y="5" width="4" height="14" rx="1" />
+            <rect x="14" y="5" width="4" height="14" rx="1" />
+        </svg>
+        <svg id="weiIconPlay" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" style="display:none">
+            <polygon points="5,3 19,12 5,21" />
+        </svg>
+    </div>
+
+    <!-- Ambient Golden Dust Canvas Layer -->
+    <canvas id="ambient-canvas"></canvas>
+
+    <!-- ==========================================================================
+         MAIN INVITATION WRAPPER
+         ========================================================================== -->
+    <div class="invitation-page-wrapper">
+
+        <!-- ======================================================================
+             SECTION 1 / PAGE 1: THE FRONT PAGE ARTBOARD
+             ====================================================================== -->
+        <section id="front-artboard" class="front-artboard artboard-no-swans">
+
+            <!-- Architectural Stone Arch, Flowers & Pond Layer (Swans Removed) -->
+            <div class="artboard-video-wrap artboard-scenery-wrap">
+                <img src="images/artboard_frame_no_swans.jpg" alt="Sacred Garden Arch &amp; Pond"
+                    class="artboard-scenery-img">
+                <!-- Radial Sunlit Glow Shape (opacity 0.5) -->
+                <div class="artboard-shape-glow"></div>
+            </div>
+
+            <!-- Top Hanging Botanical Garland -->
+            <div class="artboard-top-garland">
+                <img src="https://static.tildacdn.net/tild3336-3462-4961-a332-613731663665/623915249_2629494717.png"
+                    alt="" class="garland-top-img">
+            </div>
+
+            <!-- Islamic Crescent & Star Seal -->
+            <div class="artboard-cross-seal">
+                <img src="images/islamic-crescent-icon.svg" alt="" class="cross-icon-img islamic-crescent-img">
+            </div>
+
+            <!-- Ceremony Title -->
+            <div class="artboard-ceremony-title">Join Us for the Wedding of</div>
+
+            <!-- Date "02.01.2027" -->
+            <div class="artboard-date-tag">02 • 01 • 2027</div>
+
+            <!-- Double Wedding Couple Names -->
+            <div class="artboard-names-wrap double-wedding">
+                <!-- Couple 1: Shaheen Ahmed & Noora Maisoon -->
+                <div class="couple-unit">
+                    <div class="artboard-name-first">Shaheen Ahmed</div>
+                    <div class="artboard-amp">&amp;</div>
+                    <div class="artboard-name-second">Noora Maisoon</div>
+                </div>
+
+                <!-- Subtle Inter-Couple Golden Separator -->
+                <div class="artboard-wedding-separator" aria-hidden="true">
+                    <span class="sep-line"></span>
+                    <span class="sep-symbol">
+                        <svg class="sep-sparkle-svg" viewBox="0 0 24 24" fill="currentColor" width="9" height="9"
+                            aria-hidden="true">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                        </svg>
+                        <span class="sep-amp">&amp;</span>
+                        <svg class="sep-sparkle-svg" viewBox="0 0 24 24" fill="currentColor" width="9" height="9"
+                            aria-hidden="true">
+                            <path d="M12 0L14.59 9.41L24 12L14.59 14.59L12 24L9.41 14.59L0 12L9.41 9.41L12 0Z" />
+                        </svg>
+                    </span>
+                    <span class="sep-line"></span>
+                </div>
+
+                <!-- Couple 2: Shifa & Ajmal Farhan -->
+                <div class="couple-unit">
+                    <div class="artboard-name-first">Shifa</div>
+                    <div class="artboard-amp">&amp;</div>
+                    <div class="artboard-name-second">Ajmal Farhan</div>
+                </div>
+            </div>
+
+            <!-- Scroll Down Text & Animated Bouncing Chevron -->
+            <div id="artboard-scroll-btn" class="artboard-scroll-down">
+                <div class="artboard-scroll-label">Scroll down</div>
+                <div class="artboard-scroll-chevron">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25.00 15.86" class="chevron-svg">
+                        <path fill="none" stroke="#937100" stroke-width="1.8" stroke-linecap="round"
+                            d="M1.0092 1.008C4.3691 5.4431 9.1402 9.565 12.5 14C16.8007 9.565 19.6901 5.4431 23.9908 1.008" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Swaying Botanical Branches Left & Right -->
+            <div class="artboard-branch-left">
+                <img src="https://static.tildacdn.net/tild6639-3363-4136-a234-356639363561/noroot.png" alt=""
+                    class="branch-floating branch-left">
+            </div>
+            <div class="artboard-branch-right">
+                <img src="https://static.tildacdn.net/tild3764-3461-4436-a562-636534643333/noroot.png" alt=""
+                    class="branch-floating branch-right">
+            </div>
+
+            <!-- Bottom Lake / Greenery Artwork -->
+            <div class="artboard-bottom-water">
+                <img src="images/tilda_water.png" alt="" class="bottom-water-img">
+            </div>
+
+            <!-- Islamic Golden Divider -->
+            <div class="artboard-christian-divider reveal-anim" aria-hidden="true">
+                <span class="cross-divider-line left-line"></span>
+                <div class="cross-divider-emblem">
+                    <img src="images/islamic-crescent-icon.svg" alt="" class="cross-divider-icon islamic-crescent-icon">
+                </div>
+                <span class="cross-divider-line right-line"></span>
+            </div>
+
+            <!-- Page 2 Header: Bismillah & "And We created you in pairs" - Qur'an 78:8 -->
+            <div class="artboard-two-souls reveal-anim" id="artboard-two-souls">
+                <span class="two-souls-line soul-bismillah" dir="rtl" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ
+                    الرَّحِيمِ</span>
+                <span class="two-souls-line soul-arabic-verse" dir="rtl" lang="ar">وَخَلَقْنَاكُمْ أَزْوَاجًا</span>
+                <span class="two-souls-line soul-line-quote">&ldquo;And We created you in pairs&rdquo;</span>
+                <span class="two-souls-line soul-line-cite">&mdash; Qur'an 78:8 &mdash;</span>
+            </div>
+
+        </section>
+
+        <!-- ======================================================================
+             SECTION 2 / PAGE 2: SHIMMERING GOLD COUNTDOWN TIMER
+             ====================================================================== -->
+        <section class="section-countdown-artboard reveal-anim">
+            <div class="countdown-artboard-title">Insha Allah, Our Journey Begins In</div>
+
+            <div id="countdownContainer" class="countdown-flex-container">
+                <div class="time-block" id="tb-days">
+                    <div class="number-wrap">
+                        <div class="number" id="days">--</div>
+                    </div>
+                    <div class="label">Days</div>
+                </div>
+                <div class="separator sep1">:</div>
+                <div class="time-block" id="tb-hours">
+                    <div class="number-wrap">
+                        <div class="number" id="hours">--</div>
+                    </div>
+                    <div class="label">Hours</div>
+                </div>
+                <div class="separator sep2">:</div>
+                <div class="time-block" id="tb-mins">
+                    <div class="number-wrap">
+                        <div class="number" id="minutes">--</div>
+                    </div>
+                    <div class="label">Minutes</div>
+                </div>
+                <div class="separator sep3">:</div>
+                <div class="time-block" id="tb-secs">
+                    <div class="number-wrap">
+                        <div class="number" id="seconds">--</div>
+                    </div>
+                    <div class="label">Seconds</div>
+                </div>
+            </div>
+
+            <div class="countdown-date-subtext">
+                Saturday, 2nd January 2027 • 10:30 AM to 2:30 PM
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SECTION 3 / PAGE 3: FAMILY LINEAGE ON SACRED DECKLED PARCHMENT
+             ====================================================================== -->
+        <section class="section-parchment-lineage double-lineage reveal-anim">
+            <div class="parchment-lineage-container">
+                <!-- Deckled Paper Background -->
+                <div class="parchment-lineage-bg" aria-hidden="true">
+                    <img src="images/deckled_parchment_tall.png?v=5.0.0" alt="" class="parchment-bg-img">
+                </div>
+
+                <!-- Floating Botanical Corner Roses -->
+                <div class="parchment-flower-top" aria-hidden="true">
+                    <img src="images/flower_corner_top.png?v=5.2.0" alt="" class="lineage-flower-img branch-sway-top">
+                </div>
+                <div class="parchment-flower-bottom" aria-hidden="true">
+                    <img src="images/flower_corner_bottom.png?v=5.2.0" alt=""
+                        class="lineage-flower-img branch-sway-bottom">
+                </div>
+
+                <div class="parchment-lineage-content">
+                    <!-- COUPLE 1: Shaheen Ahmed & Noora Maisoon -->
+                    <div class="lineage-couple-unit">
+                        <!-- Groom: Shaheen Ahmed -->
+                        <div class="lineage-card-block left-slide-block">
+                            <h3 class="lineage-name-script">Shaheen Ahmed</h3>
+                            <div class="lineage-parents-line">CP Abdul Khader &amp; Juvairiya K</div>
+                            <div class="lineage-address-line">
+                                Chenagara Poyil, Parannur, Narikkuni
+                            </div>
+                        </div>
+
+                        <!-- Heart Divider -->
+                        <div class="lineage-heart-divider" aria-hidden="true">
+                            <span class="heart-line"></span>
+                            <span class="heart-icon">
+                                <svg class="heart-svg" viewBox="0 0 24 24" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-hidden="true">
+                                    <path
+                                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                            </span>
+                            <span class="heart-line"></span>
+                        </div>
+
+                        <!-- Bride: Noora Maisoon -->
+                        <div class="lineage-card-block right-slide-block">
+                            <h3 class="lineage-name-script">Noora Maisoon</h3>
+                            <div class="lineage-parents-line">Muhammad Irshad &amp; Jabeena Irshad</div>
+                            <div class="lineage-address-line">
+                                Manchirath, Punnol, Thalassery
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Islamic Crescent Golden Divider -->
+                    <div class="parchment-cross-divider scale-up" aria-hidden="true">
+                        <span class="cross-divider-line left-line"></span>
+                        <div class="cross-divider-emblem">
+                            <img src="images/islamic-crescent-icon.svg" alt=""
+                                class="cross-divider-icon islamic-crescent-icon">
+                        </div>
+                        <span class="cross-divider-line right-line"></span>
+                    </div>
+
+                    <!-- COUPLE 2: Shifa & Ajmal Farhan -->
+                    <div class="lineage-couple-unit">
+                        <!-- Bride: Shifa -->
+                        <div class="lineage-card-block left-slide-block">
+                            <h3 class="lineage-name-script">Shifa</h3>
+                            <div class="lineage-parents-line">CP Abdul Khader &amp; Juvairiya K</div>
+                            <div class="lineage-address-line">
+                                Chenagara Poyil, Parannur, Narikkuni
+                            </div>
+                        </div>
+
+                        <!-- Heart Divider -->
+                        <div class="lineage-heart-divider" aria-hidden="true">
+                            <span class="heart-line"></span>
+                            <span class="heart-icon">
+                                <svg class="heart-svg" viewBox="0 0 24 24" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" aria-hidden="true">
+                                    <path
+                                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                                </svg>
+                            </span>
+                            <span class="heart-line"></span>
+                        </div>
+
+                        <!-- Groom: Ajmal Farhan -->
+                        <div class="lineage-card-block right-slide-block">
+                            <h3 class="lineage-name-script">Ajmal Farhan</h3>
+                            <div class="lineage-parents-line">Sirajudheen BC &amp; Suhara KM</div>
+                            <div class="lineage-address-line">
+                                Kallanhi Mattummel, Pannikkottur, Koduvally
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             SECTION 5 / PAGE 5: THE CELEBRATION VENUE & LOCATION ON DECKLED PARCHMENT
+             ====================================================================== -->
+        <section class="section-parchment-event reveal-anim">
+            <div class="parchment-event-container">
+                <!-- Deckled Paper Background -->
+                <div class="parchment-event-bg" aria-hidden="true">
+                    <img src="images/deckled_parchment_tall.png?v=5.0.0" alt="" class="parchment-bg-img">
+                </div>
+
+                <div class="parchment-event-content">
+                    <!-- Top Sacred Islamic Emblem -->
+                    <div class="event-cross-emblem" aria-hidden="true">
+                        <img src="images/islamic-crescent-icon.svg" alt=""
+                            class="event-cross-icon islamic-crescent-icon">
+                    </div>
+                    <div class="event-section-label">The Wedding Celebration</div>
+
+                    <!-- Date Highlight Container -->
+                    <div class="date-highlight-container">
+                        <div class="date-day-name left-slide-block">SATURDAY</div>
+                        <div class="date-grid">
+                            <span class="line left-slide"></span>
+                            <span class="date-number scale-up">02</span>
+                            <span class="line right-slide"></span>
+                        </div>
+                        <div class="date-month-year right-slide-block">JAN 2027</div>
+                    </div>
+
+                    <!-- Event Schedule & Sacred Venues -->
+                    <div class="event-schedule-block">
+                        <div class="service-item service-item-mass">
+                            <div class="service-time-badge service-badge-mass">
+                                <span class="time-clock-icon">
+                                    <svg class="time-clock-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="13"
+                                        height="13" aria-hidden="true">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                </span>
+                                <span>10:30 AM to 2:30 PM</span>
+                            </div>
+                            <h3 class="service-venue-name venue-anim-mass">Meruzila Convention Centre</h3>
+                            <div class="service-venue-sub venue-sub-mass">
+                                Elettil, Koduvally<br>
+                                <span class="venue-landmark">Near Vadi Husna Public School</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Luxury Action Buttons: View Location & Save to Calendar -->
+                    <div class="parchment-action-buttons">
+                        <!-- View Location Link -->
+                        <a href="https://maps.app.goo.gl/gqiC6uwyXmuQNy3B7" target="_blank" rel="noopener noreferrer"
+                            class="btn-parchment-pill btn-parchment-location" aria-label="View Location on Google Maps">
+                            <svg viewBox="0 0 24 24" class="pill-svg-icon">
+                                <path
+                                    d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            </svg>
+                            <span>View Location</span>
+                        </a>
+
+                        <!-- Save to Calendar Dropdown Wrap -->
+                        <div class="calendar-dropdown-wrap">
+                            <button type="button" id="btn-save-calendar-toggle"
+                                class="btn-parchment-pill btn-parchment-cal" aria-expanded="false">
+                                <svg viewBox="0 0 24 24" class="pill-svg-icon">
+                                    <path
+                                        d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" />
+                                </svg>
+                                <span>Save to Calendar</span>
+                                <svg viewBox="0 0 24 24" class="dropdown-arrow-icon">
+                                    <path d="M7 10l5 5 5-5z" />
+                                </svg>
+                            </button>
+                            <div id="calendar-dropdown-menu" class="calendar-dropdown-menu">
+                                <a id="btn-google-calendar" href="#" target="_blank" rel="noopener noreferrer"
+                                    class="cal-menu-item">
+                                    <span class="cal-mini-icon">
+                                        <svg class="cal-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="15"
+                                            height="15" aria-hidden="true">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        </svg>
+                                    </span>
+                                    <span>Google Calendar</span>
+                                </a>
+                                <button type="button" id="btn-apple-calendar" class="cal-menu-item">
+                                    <span class="cal-mini-icon">
+                                        <svg class="apple-svg" viewBox="0 0 170 170" width="15" height="15"
+                                            fill="currentColor" aria-hidden="true">
+                                            <path
+                                                d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-4.35.13-9.16-1.9-14.42-6.08-3.7-3.04-7.58-7.7-11.64-13.98-6.19-9.56-11.1-20.9-14.74-34.02-3.64-13.12-5.46-25.04-5.46-35.77 0-14.44 3.73-26.23 11.19-35.37 7.46-9.14 16.79-13.8 27.99-13.98 5.43 0 11.28 1.48 17.55 4.43 6.27 2.95 10.23 4.48 11.89 4.59 1.34 0 5.48-1.58 12.43-4.74 6.95-3.16 13.04-4.63 18.28-4.41 12.83.61 23.33 5.42 31.5 14.43-11.2 6.77-16.69 16.29-16.48 28.56.22 9.68 3.99 17.74 11.31 24.18 5.76 5.11 12.39 8.35 19.89 9.72-2.18 6.53-4.94 13.68-8.28 21.46zM119.22 31.84c0-7.72 2.76-14.97 8.28-21.75 5.53-6.77 12.48-10.09 20.87-10.09.22 1.09.33 2.18.33 3.27 0 7.62-2.88 15.08-8.63 22.38-5.75 7.3-12.91 11.1-21.48 11.41-.21-1.63-.37-3.37-.37-5.22z" />
+                                        </svg>
+                                    </span>
+                                    <span>Apple / iCal (.ics)</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sacred Golden Crescent Divider -->
+                    <div class="parchment-cross-divider mini" aria-hidden="true">
+                        <span class="cross-divider-line left-line"></span>
+                        <div class="cross-divider-emblem">
+                            <img src="images/islamic-crescent-icon.svg" alt=""
+                                class="cross-divider-icon islamic-crescent-icon">
+                        </div>
+                        <span class="cross-divider-line right-line"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================================
+             FINAL PAGE / FOOTER: WARM PRESENCE REQUEST
+             ====================================================================== -->
+        <footer class="simple-invitation-footer reveal-anim">
+            <div class="final-presence-wrap">
+                <p class="final-presence-text">
+                    We warmly await your gracious presence, along with your family.
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Main JavaScript Engine -->
+    <script src="js/weddings1.js"></script>
+</body>
+
+</html>
