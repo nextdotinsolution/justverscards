@@ -1,0 +1,2493 @@
+/* ==========================================================================
+   NEENA WITH NIKHIL — THE SACRED GARDEN
+   Christian Betrothal Invitation & Ceremony Experience
+   Inspired by https://webgencyinvitations.com/thesacredgarden
+   Theme: Warm Parchment (#F9F0E0), Antique Gold (#A67D2B, #B48C3D), Royal Wine (#5A0F1B)
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600;700&family=Ovo&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+:root {
+    /* Palette from The Sacred Garden */
+    --bg-parchment: #F9F0E0;
+    --bg-parchment-light: #FFFDF8;
+    --bg-parchment-card: rgba(255, 253, 248, 0.94);
+    --bg-parchment-glass: rgba(249, 240, 224, 0.88);
+
+    --gold-primary: #A67D2B;
+    --gold-rich: #B48C3D;
+    --gold-light: #D8BA72;
+    --gold-shimmer: #CDA95A;
+    --gold-border: rgba(166, 125, 43, 0.32);
+    --gold-glow: rgba(180, 140, 61, 0.28);
+
+    --wine-royal: #5A0F1B;
+    --wine-hover: #721625;
+    --wine-soft: rgba(90, 15, 27, 0.08);
+
+    --text-primary: #332418;
+    --text-secondary: #6A5140;
+    --text-muted: #8C7666;
+
+    /* Typography */
+    --font-heading: 'Cinzel', Georgia, serif;
+    --font-decorative: 'Cinzel Decorative', Georgia, serif;
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Montserrat', -apple-system, sans-serif;
+    --font-timer: 'Ovo', Georgia, serif;
+
+    /* Card & Section Container Dimensions */
+    --container-max-w: 460px;
+    --artboard-w: 450px;
+    --artboard-h: 940px;
+    --shadow-soft: 0 10px 30px rgba(110, 80, 45, 0.08);
+    --shadow-card: 0 16px 40px rgba(110, 80, 45, 0.12);
+}
+
+/* Base Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-parchment);
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-parchment);
+    color: var(--text-primary);
+    font-family: var(--font-serif);
+    line-height: 1.6;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   1. CINEMATIC ENVELOPE OVERLAY (#weiOverlay)
+   (Exact Match to The Sacred Garden rec2487446003)
+   ========================================================================== */
+#weiOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: #F9F0E0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    transition: opacity 1.4s ease;
+}
+
+.wei-envelope-stage {
+    position: relative;
+    width: 100%;
+    max-width: 440px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#weiImg {
+    width: 100%;
+    max-width: 440px;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(140, 100, 60, 0.22));
+}
+
+#weiTapWrap.wei-tap-center {
+    position: absolute;
+    top: 51.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: weiTapIn 1.2s 0.6s both;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.wei-tap-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 22px;
+    background: radial-gradient(circle, rgba(255, 252, 245, 0.94) 0%, rgba(247, 238, 222, 0.88) 100%);
+    border: 1.5px solid rgba(197, 155, 39, 0.65);
+    border-radius: 30px;
+    box-shadow: 0 4px 18px rgba(140, 100, 60, 0.16), 0 0 16px rgba(218, 165, 32, 0.35);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    animation: weiBadgePulse 2.4s ease-in-out infinite;
+    cursor: pointer;
+}
+
+.wei-tap-sparkle {
+    font-size: 11px;
+    color: #C59B27;
+    animation: weiSparkleSpin 3s linear infinite;
+    line-height: 1;
+}
+
+@keyframes weiSparkleSpin {
+    0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.8; }
+    50%      { transform: scale(1.25) rotate(15deg); opacity: 1; }
+}
+
+.wei-tap-badge .wei-tap-label {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #624326;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+@keyframes weiBadgePulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 4px 18px rgba(140, 100, 60, 0.16), 0 0 14px rgba(218, 165, 32, 0.25);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 26px rgba(140, 100, 60, 0.24), 0 0 24px rgba(218, 165, 32, 0.55);
+    }
+}
+
+@keyframes weiTapIn {
+    from { opacity: 0; transform: translate(-50%, calc(-50% + 8px)); }
+    to   { opacity: 1; transform: translate(-50%, -50%); }
+}
+
+/* ==========================================================================
+   2. VIDEO UNVEILING LAYER (#weiVideoWrap)
+   ========================================================================== */
+#weiVideoWrap {
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #F9F0E0;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    pointer-events: none;
+}
+
+#weiVideoWrap.wei-video-in {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#weiVideoWrap.wei-video-out {
+    opacity: 0;
+    transition: opacity 1.4s ease;
+    pointer-events: none;
+}
+
+#weiVideo {
+    width: 100%;
+    max-width: 440px;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+}
+
+.wei-skip-btn {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    padding: 7px 16px;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--text-secondary);
+    border: 1px solid var(--gold-border);
+    border-radius: 20px;
+    font-family: var(--font-heading);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 100001;
+}
+
+.wei-skip-btn:hover {
+    background: var(--wine-royal);
+    color: #ffffff;
+    border-color: var(--wine-royal);
+}
+
+/* ==========================================================================
+   3. FLOATING MUSIC CONTROLLER BUTTON (#weiAudioBtn)
+   ========================================================================== */
+#weiAudioBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 58px;
+    height: 58px;
+    background: #5A0F1B;
+    border-radius: 50%;
+    border: 2px solid rgba(216, 186, 114, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2147483647;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(90, 15, 27, 0.4);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out, transform 0.25s ease;
+}
+
+#weiAudioBtn:hover {
+    transform: scale(1.08);
+}
+
+#weiAudioBtn svg {
+    width: 26px;
+    height: 26px;
+    fill: white;
+}
+
+/* ==========================================================================
+   4. AMBIENT CANVAS & WRAPPER
+   ========================================================================== */
+#ambient-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 5;
+    opacity: 0.6;
+}
+
+.invitation-page-wrapper {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--bg-parchment);
+    z-index: 10;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   5. SECTION 1: THE FRONT PAGE ARTBOARD (rec2487446043 EXACT COMPOSITION)
+   Design Dimensions: 450px wide x 1140px tall, warm ivory #F9F0E0 background
+   Pillar Width: Center area strictly constrained between the stone pillars
+   ========================================================================== */
+.front-artboard {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    height: 940px;
+    margin: 0 auto;
+    background-color: #F9F0E0;
+    overflow: hidden;
+    box-shadow: 0 0 50px rgba(110, 80, 45, 0.08);
+}
+
+/* Swans Looping Background Video */
+.artboard-video-wrap {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 450px;
+    height: 720px;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.artboard-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Radial Sunlit Glow Shape (opacity 0.5) */
+.artboard-shape-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 640px;
+    opacity: 0.5;
+    background-image: radial-gradient(circle at center, rgba(255, 249, 235, 1) 0%, rgba(255, 231, 192, 0) 85%);
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Top Hanging Botanical Garland */
+.artboard-top-garland {
+    position: absolute;
+    top: -710px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 735px;
+    height: 735px;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.garland-top-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* Sacred Christian Cross Seal (Top: 155px - Strictly & Immutably Centered) */
+.artboard-cross-seal {
+    position: absolute;
+    top: 155px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 24px;
+    height: 32px;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    filter: drop-shadow(0 2px 6px rgba(166, 125, 43, 0.45));
+}
+
+.cross-icon-img {
+    width: 24px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Ceremony Title: Betrothal Ceremony (Top: 195px - shifted down)
+   STRICTLY INSIDE THE PILLARS (max-width: 210px) - REFINED, DAINTY SIZE */
+.artboard-ceremony-title {
+    position: absolute;
+    top: 195px;
+    left: 50%;
+    transform: translateX(-50%) translateY(16px);
+    width: 90%;
+    max-width: 210px; /* Kept strictly inside the pillars */
+    text-align: center;
+    color: #a67d2b;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 11.5px; /* Refined dainty font size */
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    line-height: 1.25;
+    z-index: 4;
+    white-space: nowrap;
+    text-shadow: 0 1px 6px rgba(255, 255, 255, 0.95), 0 0 1px rgba(166, 125, 43, 0.35);
+    opacity: 0;
+    filter: blur(4px);
+    pointer-events: none;
+}
+
+.front-artboard.artboard-revealed .artboard-ceremony-title {
+    animation: artboardEntranceOnce 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.12s 1 normal forwards;
+}
+
+/* Date Tag: 28 • 10 • 2026 (Top: 228px - shifted down)
+   Delicate frosted pill badge strictly inside the pillars */
+.artboard-date-tag {
+    position: absolute;
+    top: 228px;
+    left: 50%;
+    transform: translateX(-50%) translateY(16px);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #a67d2b;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 10.5px; /* Refined dainty size */
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    line-height: 1;
+    z-index: 4;
+    padding: 3px 12px;
+    background: rgba(255, 253, 248, 0.82);
+    border: 1px solid rgba(166, 125, 43, 0.28);
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(166, 125, 43, 0.08);
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.85);
+    white-space: nowrap;
+    opacity: 0;
+    filter: blur(4px);
+    pointer-events: none;
+}
+
+.front-artboard.artboard-revealed .artboard-date-tag {
+    animation: artboardEntranceOnce 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.24s 1 normal forwards;
+}
+
+/* Grand Stacked Couple Names: Neena & Nikhil (Top: 290px - shifted down)
+   STRICTLY INSIDE THE PILLARS (max-width: 215px)
+   EXQUISITE BEAU RIVAGE SCRIPT — NOT BOLD, SLENDER & REFINED
+   BESPOKE ROMANTIC CONVERGENCE & GOLD LUSTRE PASS (SINGLE RUN) */
+.artboard-names-wrap {
+    position: absolute;
+    top: 290px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 215px; /* Perfectly centered between the stone pillars */
+    text-align: center;
+    z-index: 4;
+    pointer-events: none;
+}
+
+/* Bride Name (Neena): Graceful Convergence from Left + Single-Pass Gold Lustre */
+.artboard-name-first {
+    font-family: 'Beau Rivage', 'Cormorant Garamond', cursive;
+    font-size: clamp(34px, 8.5vw, 40px); /* Refined size that fits strictly between pillars */
+    font-weight: 400; /* STRICTLY NOT BOLD */
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    text-transform: none; /* Flowing title-case script */
+    color: #a67d2b;
+    background: linear-gradient(
+        115deg,
+        #8C6318 0%,
+        #B48C3D 20%,
+        #FFF6D0 38%,
+        #D4AF37 54%,
+        #8C6318 72%,
+        #B48C3D 100%
+    );
+    background-size: 260% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.95)) drop-shadow(0 1px 2px rgba(140, 99, 24, 0.3));
+    opacity: 0;
+    transform: translateX(-34px) translateY(4px);
+    will-change: transform, opacity, filter, background-position;
+}
+
+.front-artboard.artboard-revealed .artboard-name-first {
+    animation: brideGlideInLeft 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.32s 1 normal forwards,
+               goldLustreSweep 2.2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s 1 normal forwards;
+}
+
+/* Groom Name (Nikhil): Graceful Convergence from Right + Single-Pass Gold Lustre */
+.artboard-name-second {
+    font-family: 'Beau Rivage', 'Cormorant Garamond', cursive;
+    font-size: clamp(34px, 8.5vw, 40px); /* Refined size that fits strictly between pillars */
+    font-weight: 400; /* STRICTLY NOT BOLD */
+    line-height: 1.05;
+    letter-spacing: 0.02em;
+    text-transform: none; /* Flowing title-case script */
+    color: #a67d2b;
+    background: linear-gradient(
+        115deg,
+        #8C6318 0%,
+        #B48C3D 20%,
+        #FFF6D0 38%,
+        #D4AF37 54%,
+        #8C6318 72%,
+        #B48C3D 100%
+    );
+    background-size: 260% 100%;
+    background-position: 100% 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.95)) drop-shadow(0 1px 2px rgba(140, 99, 24, 0.3));
+    opacity: 0;
+    transform: translateX(34px) translateY(4px);
+    will-change: transform, opacity, filter, background-position;
+}
+
+.front-artboard.artboard-revealed .artboard-name-second {
+    animation: groomGlideInRight 1.4s cubic-bezier(0.16, 1, 0.3, 1) 0.32s 1 normal forwards,
+               goldLustreSweep 2.2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s 1 normal forwards;
+}
+
+/* Ampersand (&): Gentle Romantic Bloom in Center */
+.artboard-amp {
+    font-family: 'Beau Rivage', 'Cormorant Garamond', cursive;
+    font-size: 24px;
+    font-weight: 400; /* NOT BOLD */
+    line-height: 1;
+    margin: 1px 0;
+    display: block;
+    color: #b48c3d;
+    filter: drop-shadow(0 1px 4px rgba(255, 255, 255, 0.9));
+    opacity: 0;
+    transform: scale(0.3) rotate(-14deg);
+    will-change: transform, opacity;
+}
+
+.front-artboard.artboard-revealed .artboard-amp {
+    animation: ampersandBloomOnce 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) 0.48s 1 normal forwards;
+}
+
+/* Scroll Down Prompt (Top: 475px - shifted down) - Sits cleanly below names */
+.artboard-scroll-down {
+    position: absolute;
+    top: 475px;
+    left: 50%;
+    transform: translateX(-50%) translateY(16px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    z-index: 4;
+    cursor: pointer;
+    text-decoration: none;
+    max-width: 180px;
+    opacity: 0;
+    filter: blur(4px);
+    transition: transform 0.25s ease;
+}
+
+.front-artboard.artboard-revealed .artboard-scroll-down {
+    animation: artboardEntranceOnce 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.65s 1 normal forwards;
+    pointer-events: auto;
+}
+
+.artboard-scroll-down:hover {
+    transform: translateX(-50%) translateY(-2px);
+}
+
+.artboard-scroll-label {
+    color: #a67d2b;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 11px; /* REFINED DAINTY SIZE */
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    text-align: center;
+    white-space: nowrap;
+    text-shadow: 0 1px 6px rgba(255, 255, 255, 0.95);
+}
+
+.artboard-scroll-chevron {
+    width: 18px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: artboardBounce 1.8s ease-in-out infinite;
+}
+
+.chevron-svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes artboardBounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(5px); }
+}
+
+/* =========================================================================
+   ONE-SHOT REFINED ENTRANCE ANIMATIONS (NOT INFINITE, NOT EVERY TIME)
+   Fires exactly ONCE when the artboard is revealed, then settles permanently.
+   ========================================================================= */
+@keyframes artboardEntranceOnce {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(16px);
+        filter: blur(4px);
+    }
+    60% {
+        opacity: 0.85;
+        filter: blur(0.5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+        filter: none;
+    }
+}
+
+@keyframes brideGlideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-34px) translateY(6px);
+        filter: blur(6px);
+        letter-spacing: 0.08em;
+    }
+    60% {
+        opacity: 0.9;
+        filter: blur(0.5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+        filter: none;
+        letter-spacing: 0.02em;
+    }
+}
+
+@keyframes groomGlideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(34px) translateY(6px);
+        filter: blur(6px);
+        letter-spacing: 0.08em;
+    }
+    60% {
+        opacity: 0.9;
+        filter: blur(0.5px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) translateY(0);
+        filter: none;
+        letter-spacing: 0.02em;
+    }
+}
+
+@keyframes ampersandBloomOnce {
+    0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-14deg);
+        filter: blur(4px);
+    }
+    65% {
+        opacity: 1;
+        transform: scale(1.18) rotate(2deg);
+        filter: none;
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+        filter: none;
+    }
+}
+
+@keyframes goldLustreSweep {
+    0% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0% 0;
+    }
+}
+
+/* Swaying Left & Right Botanical Branches */
+.artboard-branch-left {
+    position: absolute;
+    top: 535px;
+    left: -12px;
+    width: 185px;
+    z-index: 3;
+    pointer-events: none;
+    transform-origin: bottom left;
+    animation: sbsSwayLeft 4s ease-in-out infinite;
+}
+
+.artboard-branch-right {
+    position: absolute;
+    top: 515px;
+    right: -15px;
+    width: 195px;
+    z-index: 3;
+    pointer-events: none;
+    transform-origin: bottom right;
+    animation: sbsSwayRight 4s ease-in-out infinite;
+}
+
+.branch-floating {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@keyframes sbsSwayLeft {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50%      { transform: scale(1.05) rotate(2deg); }
+}
+
+@keyframes sbsSwayRight {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50%      { transform: scale(1.04) rotate(-2deg); }
+}
+
+/* Bottom Lake / Greenery Artwork (Anchored to bottom - displays organic burned paper deckle edge) */
+.artboard-bottom-water {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 744px;
+    height: 288px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.bottom-water-img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+}
+
+/* ==========================================================================
+   SACRED CHRISTIAN DIVIDER & TWO SOULS PROCLAMATION (ARTBOARD LOWER SECTION)
+   ========================================================================== */
+
+/* Front Artboard Islamic Crescent Divider (Top: 672px - Centered) */
+.artboard-christian-divider {
+    position: absolute;
+    top: 672px;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: 220px;
+    max-width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 4;
+    user-select: none;
+    pointer-events: none;
+    box-sizing: border-box;
+    opacity: 0;
+    transition: opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.front-artboard.artboard-revealed .artboard-christian-divider,
+.artboard-christian-divider.revealed {
+    opacity: 1 !important;
+    transform: translateX(-50%) !important;
+}
+
+/* ==========================================================================
+   TWO SOULS PROCLAMATION (ARTBOARD LOWER SECTION - SCROLL REVEAL)
+   ========================================================================== */
+.artboard-two-souls {
+    position: absolute;
+    top: 772px;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto !important;
+    width: 100%;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #a67d2b;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 14.5px;
+    line-height: 1.32;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    z-index: 4;
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.artboard-two-souls.revealed {
+    opacity: 1 !important;
+}
+
+.two-souls-line {
+    width: 100%;
+    text-align: center;
+    display: block;
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                text-shadow 0.85s ease,
+                letter-spacing 0.85s ease;
+    will-change: transform, opacity;
+}
+
+.artboard-two-souls.revealed .two-souls-line {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.artboard-two-souls.revealed .soul-bismillah {
+    transition-delay: 0.05s;
+    font-family: 'Amiri', 'Traditional Arabic', serif;
+    font-size: clamp(16px, 4.2vw, 19.5px);
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 0;
+    color: #8C6318;
+    margin-bottom: 3px;
+    direction: rtl;
+    text-align: center;
+    text-shadow: 0 1px 5px rgba(255, 255, 255, 0.95), 0 0 12px rgba(212, 175, 55, 0.4);
+    animation: goldShimmerText 3.6s ease-in-out infinite alternate 1.0s;
+}
+
+.artboard-two-souls.revealed .soul-line-1 {
+    transition-delay: 0.20s;
+    font-size: clamp(13px, 3.4vw, 15px);
+    line-height: 1.3;
+    text-align: center;
+    text-shadow: 0 1px 5px rgba(255, 255, 255, 0.95), 0 0 12px rgba(212, 175, 55, 0.35);
+    animation: goldShimmerText 3.6s ease-in-out infinite alternate 1.3s;
+}
+
+.artboard-two-souls.revealed .soul-line-2 {
+    transition-delay: 0.40s;
+    font-size: clamp(13px, 3.4vw, 15px);
+    line-height: 1.3;
+    text-align: center;
+    text-shadow: 0 1px 5px rgba(255, 255, 255, 0.95), 0 0 14px rgba(212, 175, 55, 0.4);
+    animation: goldShimmerText 3.6s ease-in-out infinite alternate 1.6s;
+}
+
+.artboard-two-souls.revealed .soul-line-3 {
+    transition-delay: 0.60s;
+    font-size: clamp(13px, 3.4vw, 15px);
+    line-height: 1.3;
+    text-align: center;
+    text-shadow: 0 1px 5px rgba(255, 255, 255, 0.95), 0 0 16px rgba(212, 175, 55, 0.5);
+    animation: goldShimmerText 3.6s ease-in-out infinite alternate 1.9s;
+}
+
+@keyframes goldShimmerText {
+    0% {
+        text-shadow: 0 1px 6px rgba(255, 255, 255, 0.9), 0 0 12px rgba(212, 175, 55, 0.35);
+        color: #a67d2b;
+    }
+    50% {
+        text-shadow: 0 1px 8px rgba(255, 255, 255, 1), 0 0 22px rgba(230, 195, 75, 0.75), 0 0 32px rgba(212, 175, 55, 0.35);
+        color: #c59b3a;
+    }
+    100% {
+        text-shadow: 0 1px 6px rgba(255, 255, 255, 0.9), 0 0 12px rgba(212, 175, 55, 0.35);
+        color: #a67d2b;
+    }
+}
+
+/* ==========================================================================
+   6. SECTION 2: SHIMMERING GOLD COUNTDOWN TIMER
+   Matching reference screenshot: Cursive gold calligraphy header, centered
+   timeless numbers & labels, enclosed between torn paper deckled edges.
+   ========================================================================== */
+.section-countdown-artboard {
+    position: relative;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 24px 16px 36px;
+    min-height: 220px;
+    text-align: center;
+    background-color: #F9F0E0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.countdown-artboard-title {
+    color: #a67d2b;
+    font-family: 'Beau Rivage', 'Playfair Display', cursive, serif;
+    font-size: clamp(24px, 5.5vw, 30px);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    text-align: center;
+    margin-bottom: 14px;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
+}
+
+#countdownContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin: 4px 0 12px;
+}
+
+.time-block {
+    text-align: center;
+    min-width: 48px;
+}
+
+.number-wrap {
+    overflow: hidden;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.number {
+    font-size: clamp(26px, 6vw, 32px);
+    font-family: 'Ovo', 'Cormorant Garamond', Georgia, serif;
+    line-height: 1.1;
+    display: block;
+    white-space: nowrap;
+    color: #B48C3D;
+    background: linear-gradient(105deg, #8C6318 0%, #B48C3D 35%, #D4AF37 50%, #B48C3D 65%, #8C6318 100%);
+    background-size: 260% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    clip-path: inset(0 100% 0 0);
+    transition: transform 0.55s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.55s ease;
+}
+
+.number.revealed {
+    animation: inkReveal 1.1s cubic-bezier(0.4, 0, 0.2, 1) forwards, candleShimmer 4.5s ease-in-out 1.1s infinite;
+}
+
+#tb-days .number.revealed  { animation-delay: 0s, 1.1s; }
+#tb-hours .number.revealed { animation-delay: 0.18s, 1.28s; }
+#tb-mins .number.revealed  { animation-delay: 0.36s, 1.46s; }
+#tb-secs .number.revealed  { animation-delay: 0.54s, 1.64s; }
+
+@keyframes inkReveal {
+    0%   { clip-path: inset(0 100% 0 0); }
+    100% { clip-path: inset(0 0% 0 0); }
+}
+
+@keyframes candleShimmer {
+    0%   { background-position: 100% 0; }
+    50%  { background-position: 0% 0; }
+    100% { background-position: 100% 0; }
+}
+
+.number.flip-out {
+    transform: translateY(-60%);
+    opacity: 0;
+}
+
+.number.flip-in {
+    transform: translateY(60%);
+    opacity: 0;
+    transition: none;
+}
+
+.label {
+    font-size: clamp(10.5px, 2.4vw, 12px);
+    margin-top: 4px;
+    font-weight: 500;
+    color: #7D6144;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    letter-spacing: 0.08em;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+    text-transform: uppercase;
+}
+
+.label.revealed { opacity: 0.95; }
+
+#tb-days .label.revealed  { transition-delay: 0.9s; }
+#tb-hours .label.revealed { transition-delay: 1.08s; }
+#tb-mins .label.revealed  { transition-delay: 1.26s; }
+#tb-secs .label.revealed  { transition-delay: 1.44s; }
+
+.separator {
+    font-size: clamp(20px, 4.8vw, 25px);
+    margin-top: -14px;
+    color: #B48C3D;
+    line-height: 1;
+    font-family: 'Ovo', Georgia, serif;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.separator.revealed { opacity: 0.9; }
+.sep1.revealed { transition-delay: 0.25s; }
+.sep2.revealed { transition-delay: 0.43s; }
+.sep3.revealed { transition-delay: 0.61s; }
+
+.countdown-date-subtext {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(11.5px, 2.5vw, 13px);
+    letter-spacing: 0.05em;
+    color: #7D6144;
+    margin-top: 12px;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.85);
+}
+
+/* ==========================================================================
+   PAGE-WIDE SACRED CHRISTIAN CROSS DIVIDERS (Strictly Centered & Upright)
+   ========================================================================== */
+.christian-cross-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 280px;
+    max-width: 85%;
+    margin: 32px auto 20px;
+    padding: 0;
+    user-select: none;
+    position: relative;
+    z-index: 2;
+}
+
+.cross-divider-line {
+    flex: 1 1 0px;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, #D4AF37 70%, #8C6519 100%);
+    position: relative;
+    opacity: 0.85;
+}
+
+.cross-divider-line.right-line {
+    background: linear-gradient(90deg, #8C6519 0%, #D4AF37 30%, transparent 100%);
+}
+
+.cross-divider-emblem {
+    flex: 0 0 28px;
+    width: 28px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    box-sizing: border-box;
+    filter: drop-shadow(0 2px 6px rgba(180, 130, 40, 0.45));
+    transform: none !important;
+    opacity: 1;
+}
+
+.cross-divider-icon {
+    width: 24px;
+    height: 32px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Revealed states for Dividers */
+.artboard-christian-divider.revealed .cross-divider-line,
+.christian-cross-divider.revealed .cross-divider-line,
+.front-artboard.artboard-revealed .artboard-christian-divider .cross-divider-line {
+    opacity: 0.85;
+}
+
+.artboard-christian-divider.revealed .cross-divider-emblem,
+.christian-cross-divider.revealed .cross-divider-emblem,
+.front-artboard.artboard-revealed .artboard-christian-divider .cross-divider-emblem {
+    transform: none;
+    opacity: 1;
+}
+
+/* ==========================================================================
+   7. SECTION 3: SACRED SCRIPTURE
+   ========================================================================== */
+.section-scripture {
+    max-width: var(--container-max-w);
+    margin: 24px auto;
+    padding: 36px 24px 24px;
+    text-align: center;
+    background: var(--bg-parchment-card);
+    border: 1px solid var(--gold-border);
+    border-radius: 14px;
+    box-shadow: var(--shadow-card);
+    position: relative;
+}
+
+.scripture-badge-cross {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 34px;
+    height: 34px;
+    background: var(--bg-parchment-light);
+    border: 1px solid var(--gold-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gold-primary);
+    font-size: 15px;
+    box-shadow: 0 4px 10px rgba(166, 125, 43, 0.15);
+}
+
+.scripture-text {
+    font-family: var(--font-serif);
+    font-size: 1.38rem;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.55;
+    margin-bottom: 12px;
+}
+
+.scripture-source {
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-rich);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   8. SECTION 4: THE BLESSED COUPLE (PORTRAIT WITH SCRATCH FOIL REVEAL)
+   ========================================================================== */
+.section-couple {
+    max-width: var(--container-max-w);
+    margin: 28px auto;
+    padding: 24px 16px;
+    text-align: center;
+}
+
+.couple-section-tag {
+    font-family: var(--font-heading);
+    font-size: 0.76rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--gold-primary);
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.couple-section-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.45rem, 5.5vw, 1.9rem);
+    color: var(--gold-primary);
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+}
+
+.couple-section-subtitle {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+}
+
+.portrait-stage {
+    position: relative;
+    max-width: 300px;
+    margin: 0 auto 20px;
+}
+
+.portrait-arch {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 150px 150px 20px 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(110, 80, 45, 0.18), 0 6px 18px rgba(0, 0, 0, 0.06);
+    background: #E8DEC8;
+    touch-action: pan-y;
+}
+
+.portrait-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+    touch-action: pan-y;
+}
+
+.scratch-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+    z-index: 5;
+    transition: opacity 0.6s ease, filter 0.6s ease;
+    touch-action: pan-y;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+.scratch-canvas.revealed {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+}
+
+.portrait-arch-border {
+    position: absolute;
+    inset: 0;
+    border-radius: 150px 150px 20px 20px;
+    border: 2px solid rgba(216, 186, 114, 0.7);
+    pointer-events: none;
+    z-index: 6;
+}
+
+.scratch-hint-text {
+    margin-top: 14px;
+    font-family: var(--font-heading);
+    font-size: 0.76rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-rich);
+    font-weight: 600;
+    animation: hintPulse 2.5s infinite ease-in-out;
+}
+
+@keyframes hintPulse {
+    0%, 100% { opacity: 0.7; }
+    50%      { opacity: 1; }
+}
+
+.couple-covenant-box {
+    max-width: 420px;
+    margin: 16px auto 0;
+    padding: 14px 20px;
+    border-left: 2px solid var(--gold-primary);
+    border-right: 2px solid var(--gold-primary);
+}
+
+.arabic-covenant-script {
+    font-family: 'Amiri', 'Traditional Arabic', serif;
+    font-size: clamp(16px, 4vw, 19.5px);
+    font-weight: 700;
+    line-height: 1.8;
+    color: #6E4F14;
+    text-align: center;
+    direction: rtl;
+    margin: 4px auto 10px;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9), 0 0 10px rgba(212, 175, 55, 0.25);
+}
+
+.covenant-text {
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.5;
+}
+
+.covenant-cite {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: #9C7324;
+    margin-top: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   SECTION 3: FAMILY LINEAGE ON SACRED DECKLED PARCHMENT
+   Authentic deckled paper sheet with extended height & golden Christian divider
+   ========================================================================== */
+.section-parchment-lineage {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 40px auto 60px;
+    padding: 0 12px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.parchment-lineage-container {
+    position: relative;
+    width: 100%;
+    min-height: 760px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 95px 44px 105px;
+    box-sizing: border-box;
+}
+
+/* Background Deckled Parchment (Clean Sacred Parchment Sheet) */
+.parchment-lineage-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.parchment-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    display: block;
+    filter: drop-shadow(0 12px 35px rgba(110, 80, 45, 0.12));
+}
+
+/* Floating Botanical Corner Roses: Top-Right & Bottom-Left Framing */
+.parchment-flower-top {
+    position: absolute;
+    top: -74px;
+    right: -22px;
+    width: clamp(155px, 36vw, 215px);
+    z-index: 2;
+    pointer-events: none;
+    user-select: none;
+    transform-origin: top right;
+}
+
+.parchment-flower-bottom {
+    position: absolute;
+    bottom: -110px;
+    left: -42px;
+    width: clamp(155px, 36vw, 215px);
+    z-index: 2;
+    pointer-events: none;
+    user-select: none;
+    transform-origin: bottom left;
+}
+
+.lineage-flower-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 4px 15px rgba(110, 80, 45, 0.14));
+}
+
+/* Subtle Organic Sway Animation (Matching Front Artboard Branches) */
+.branch-sway-top {
+    animation: lineageSwayTop 5s ease-in-out infinite;
+}
+
+.branch-sway-bottom {
+    animation: lineageSwayBottom 5s ease-in-out infinite;
+}
+
+@keyframes lineageSwayTop {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.03) rotate(2deg) translateY(-2px);
+    }
+}
+
+@keyframes lineageSwayBottom {
+    0%, 100% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.03) rotate(-2deg) translateY(2px);
+    }
+}
+
+.parchment-lineage-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 380px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.lineage-card-block {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Bride & Groom Calligraphy Script */
+.lineage-name-script {
+    font-family: 'Beau Rivage', 'Playfair Display', cursive, serif;
+    font-size: clamp(48px, 11vw, 62px);
+    font-weight: 400;
+    line-height: 1.1;
+    color: #a67d2b;
+    margin: 0 0 10px 0;
+    background: linear-gradient(
+        115deg,
+        #8C6318 0%,
+        #B48C3D 20%,
+        #FFF6D0 38%,
+        #D4AF37 54%,
+        #8C6318 72%,
+        #B48C3D 100%
+    );
+    background-size: 240% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 6px rgba(255, 255, 255, 0.95)) drop-shadow(0 1px 3px rgba(140, 99, 24, 0.25));
+    letter-spacing: 0.02em;
+}
+
+/* Parents Typography (Matching glowing gold Cinzel font with smooth scroll reveal) */
+.lineage-parents-line {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: clamp(13px, 3.2vw, 17px);
+    font-weight: 600;
+    line-height: 1.4;
+    color: #a67d2b;
+    letter-spacing: 0.03em;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+    transition: opacity 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1.1s cubic-bezier(0.16, 1, 0.3, 1),
+                text-shadow 1.1s ease;
+    will-change: transform, opacity;
+}
+
+/* Gracy Biju & Biju. E.J. Reveal */
+.section-parchment-lineage.revealed .bride-parents-anim,
+.left-slide-block.revealed .bride-parents-anim,
+.revealed .bride-parents-anim {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition-delay: 0.42s;
+    text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95), 0 0 18px rgba(212, 175, 55, 0.55);
+    animation: goldShimmerText 3.6s ease-in-out infinite alternate 1.6s;
+}
+
+/* (So. Mrs. Sheena Babu & Babu. V.A. (Late) Reveal */
+.section-parchment-lineage.revealed .groom-parents-anim,
+.right-slide-block.revealed .groom-parents-anim,
+.revealed .groom-parents-anim {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition-delay: 0.98s;
+    text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95), 0 0 18px rgba(212, 175, 55, 0.55);
+    animation: goldShimmerText 3.6s ease-in-out infinite alternate 2.1s;
+}
+
+/* Address Typography */
+.lineage-address-line {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(16px, 3.8vw, 19px);
+    font-weight: 500;
+    line-height: 1.5;
+    color: #6E5338;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.75);
+}
+
+/* Sacred Golden Christian Cross Divider between Bride & Groom */
+.parchment-cross-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 240px;
+    max-width: 80%;
+    margin: 32px auto 28px;
+    padding: 0;
+    user-select: none;
+    position: relative;
+    z-index: 4;
+}
+
+.parchment-cross-divider .cross-divider-line {
+    flex: 1 1 0px;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, #D4AF37 70%, #8C6519 100%);
+    opacity: 0.85;
+}
+
+.parchment-cross-divider .cross-divider-line.right-line {
+    background: linear-gradient(90deg, #8C6519 0%, #D4AF37 30%, transparent 100%);
+}
+
+.parchment-cross-divider .cross-divider-emblem {
+    flex: 0 0 26px;
+    width: 26px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    filter: drop-shadow(0 2px 6px rgba(180, 130, 40, 0.45));
+}
+
+.parchment-cross-divider .cross-divider-icon {
+    width: 22px;
+    height: 30px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   HERITAGE STYLE LINEAGE SLIDE & POP REVEAL ANIMATIONS
+   Staggered entrance:
+   1. Bride Block (Neena & family) slides in gracefully from Left
+   2. Sacred Christian Cross pops and expands with radiant golden lines in Center
+   3. Groom Block (Nikhil & family) slides in gracefully from Right
+   ========================================================================== */
+
+/* Block-level Left Slide Reveal (Bride Block: Neena, Parents & Address) */
+.left-slide-block {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 1.25s cubic-bezier(0.15, 0.85, 0.35, 1),
+                transform 1.25s cubic-bezier(0.15, 0.85, 0.35, 1);
+    transition-delay: 0.15s;
+    will-change: transform, opacity;
+}
+
+.section-parchment-lineage.revealed .left-slide-block,
+.section-parchment-lineage.is-visible .left-slide-block,
+.revealed .left-slide-block,
+.is-visible .left-slide-block,
+.left-slide-block.revealed,
+.left-slide-block.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Center Pop & Scale Reveal (Golden Christian Cross Divider) */
+.scale-up {
+    opacity: 0;
+    transform: scale(0.18);
+    transition: opacity 1.05s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                transform 1.05s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition-delay: 0.45s;
+    will-change: transform, opacity;
+}
+
+.section-parchment-lineage.revealed .scale-up,
+.section-parchment-lineage.is-visible .scale-up,
+.revealed .scale-up,
+.is-visible .scale-up,
+.scale-up.revealed,
+.scale-up.is-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Expanding Golden Divider Lines from Center Cross */
+.parchment-cross-divider .cross-divider-line.left-line {
+    transform-origin: right center;
+    transform: scaleX(0);
+    transition: transform 0.9s cubic-bezier(0.15, 0.85, 0.35, 1);
+    transition-delay: 0.55s;
+}
+
+.parchment-cross-divider .cross-divider-line.right-line {
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform 0.9s cubic-bezier(0.15, 0.85, 0.35, 1);
+    transition-delay: 0.55s;
+}
+
+.section-parchment-lineage.revealed .parchment-cross-divider .cross-divider-line,
+.section-parchment-lineage.is-visible .parchment-cross-divider .cross-divider-line,
+.revealed .parchment-cross-divider .cross-divider-line,
+.is-visible .parchment-cross-divider .cross-divider-line {
+    transform: scaleX(1);
+}
+
+/* Block-level Right Slide Reveal (Groom Block: Nikhil, Parents & Address) */
+.right-slide-block {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 1.25s cubic-bezier(0.15, 0.85, 0.35, 1),
+                transform 1.25s cubic-bezier(0.15, 0.85, 0.35, 1);
+    transition-delay: 0.75s;
+    will-change: transform, opacity;
+}
+
+.section-parchment-lineage.revealed .right-slide-block,
+.section-parchment-lineage.is-visible .right-slide-block,
+.revealed .right-slide-block,
+.is-visible .right-slide-block,
+.right-slide-block.revealed,
+.right-slide-block.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Accessibility: Graceful fallback for reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .left-slide-block,
+    .right-slide-block,
+    .scale-up,
+    .parchment-cross-divider .cross-divider-line {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+
+/* ==========================================================================
+   10. SECTION 5: THE SACRED CELEBRATION ON DECKLED PARCHMENT
+   Clean Authentic Deckled Paper Sheet without Flowers (Heritage Style)
+   ========================================================================== */
+.section-parchment-event {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 45px auto 65px;
+    padding: 0 12px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.parchment-event-container {
+    position: relative;
+    width: 100%;
+    min-height: 840px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 95px 36px 105px;
+    box-sizing: border-box;
+}
+
+.parchment-event-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.parchment-event-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.event-cross-emblem {
+    width: 24px;
+    height: 32px;
+    margin: 0 auto 8px;
+    filter: drop-shadow(0 2px 6px rgba(180, 130, 40, 0.45));
+}
+
+.event-cross-icon {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.event-section-label {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #9C7324;
+    font-weight: 600;
+    margin-bottom: 12px;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.85);
+}
+
+/* ==========================================================================
+   DATE HIGHLIGHT CONTAINER (Exact Heritage Layout)
+   ========================================================================== */
+.date-highlight-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4px 0 18px;
+    width: 100%;
+}
+
+.date-day-name {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: clamp(17px, 4.2vw, 21px);
+    letter-spacing: 0.28em;
+    font-weight: 700;
+    color: #8C6318;
+    text-transform: uppercase;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9);
+}
+
+.date-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 2px 0 3px;
+    width: 100%;
+}
+
+.date-grid .line {
+    flex: 1 1 0;
+    max-width: 50px;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, #D4AF37 70%, #8C6519 100%);
+    opacity: 0.85;
+}
+
+.date-grid .line.right-slide {
+    background: linear-gradient(90deg, #8C6519 0%, #D4AF37 30%, transparent 100%);
+}
+
+.date-number {
+    font-family: 'Beau Rivage', 'Playfair Display', Georgia, serif;
+    font-size: clamp(52px, 13vw, 68px);
+    font-weight: 400;
+    line-height: 1;
+    color: #a67d2b;
+    background: linear-gradient(
+        115deg,
+        #8C6318 0%,
+        #B48C3D 25%,
+        #FFF6D0 45%,
+        #D4AF37 60%,
+        #8C6318 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.95)) drop-shadow(0 1px 2px rgba(140, 99, 24, 0.28));
+}
+
+.date-month-year {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: clamp(13px, 3.2vw, 15.5px);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #6E5338;
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+/* ==========================================================================
+   EVENT SERVICES & VENUES
+   ========================================================================== */
+.event-schedule-block {
+    width: 100%;
+    margin: 8px 0 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.service-time-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8C6318;
+    background: rgba(212, 175, 55, 0.14);
+    border: 1px solid rgba(180, 140, 61, 0.4);
+    border-radius: 20px;
+    padding: 3.5px 14px;
+    margin-bottom: 6px;
+}
+
+.time-clock-icon {
+    font-size: 12px;
+}
+
+.service-time-badge {
+    opacity: 0;
+    transform: translateY(-8px);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.service-venue-name {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: clamp(16px, 3.8vw, 18.5px);
+    font-weight: 600;
+    color: #a67d2b;
+    margin: 0 0 3px 0;
+    letter-spacing: 0.05em;
+    opacity: 0;
+    transform: translateY(18px) scale(0.96);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1s cubic-bezier(0.16, 1, 0.3, 1),
+                text-shadow 1s ease,
+                letter-spacing 1s ease;
+    will-change: transform, opacity;
+}
+
+.service-venue-sub {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(14px, 3.3vw, 16px);
+    color: #6E5338;
+    font-weight: 500;
+    line-height: 1.4;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+                text-shadow 0.95s ease;
+    will-change: transform, opacity;
+}
+
+/* Holy Mass: Little Flower Church reveal on scroll */
+.section-parchment-event.revealed .service-badge-mass,
+.revealed .service-badge-mass {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+.section-parchment-event.revealed .venue-anim-mass,
+.revealed .venue-anim-mass {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    letter-spacing: 0.03em;
+    transition-delay: 0.38s;
+    text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95), 0 0 18px rgba(212, 175, 55, 0.55);
+    animation: goldShimmerText 3.6s ease-in-out infinite alternate 1.5s;
+}
+
+.section-parchment-event.revealed .venue-sub-mass,
+.revealed .venue-sub-mass {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.58s;
+}
+
+/* Fellowship Lunch: Parish Hall reveal on scroll */
+.section-parchment-event.revealed .service-badge-lunch,
+.revealed .service-badge-lunch {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.78s;
+}
+
+.section-parchment-event.revealed .venue-anim-lunch,
+.revealed .venue-anim-lunch {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    letter-spacing: 0.03em;
+    transition-delay: 0.95s;
+    text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95), 0 0 18px rgba(212, 175, 55, 0.55);
+    animation: goldShimmerText 3.6s ease-in-out infinite alternate 2.1s;
+}
+
+/* Fellowship Lunch subtext: Little Flower Church, Poomala reveal on scroll */
+.section-parchment-event.revealed .venue-sub-lunch,
+.revealed .venue-sub-lunch {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 1.15s;
+    text-shadow: 0 1px 4px rgba(255, 255, 255, 0.9), 0 0 12px rgba(212, 175, 55, 0.35);
+}
+
+.service-divider-dot {
+    color: #C5A059;
+    font-size: 10px;
+    opacity: 0.7;
+    margin: 1px 0;
+}
+
+/* ==========================================================================
+   PARCHMENT ACTION BUTTONS (View Location & Save to Calendar)
+   ========================================================================== */
+.parchment-action-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin: 16px 0 18px;
+    position: relative;
+    z-index: 5;
+}
+
+.btn-parchment-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 18px;
+    border-radius: 28px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(252, 248, 238, 0.9));
+    border: 1.5px solid #C5A059;
+    color: #6E5020;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 3px 12px rgba(110, 80, 45, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    cursor: pointer;
+    transition: all 0.28s cubic-bezier(0.2, 0.8, 0.3, 1);
+}
+
+.btn-parchment-pill:hover,
+.btn-parchment-pill:active {
+    background: linear-gradient(135deg, #B48C3D, #8C6318);
+    color: #FFFFFF;
+    border-color: #8C6318;
+    box-shadow: 0 5px 18px rgba(140, 99, 24, 0.35);
+    transform: translateY(-2px);
+}
+
+.pill-svg-icon {
+    width: 15px;
+    height: 15px;
+    fill: currentColor;
+    flex-shrink: 0;
+}
+
+.dropdown-arrow-icon {
+    width: 13px;
+    height: 13px;
+    fill: currentColor;
+    margin-left: 2px;
+    transition: transform 0.25s ease;
+}
+
+.calendar-dropdown-wrap {
+    position: relative;
+    display: inline-block;
+}
+
+.calendar-dropdown-wrap .btn-parchment-cal[aria-expanded="true"] .dropdown-arrow-icon {
+    transform: rotate(180deg);
+}
+
+.calendar-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%) translateY(-6px);
+    background: #FFFFFF;
+    border: 1px solid rgba(197, 160, 89, 0.45);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(70, 50, 25, 0.2);
+    padding: 6px;
+    min-width: 175px;
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    z-index: 20;
+}
+
+.calendar-dropdown-menu.active {
+    display: flex;
+    transform: translateX(-50%) translateY(0);
+    animation: dropdownFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.cal-menu-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: #6E5020;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: background 0.18s ease, color 0.18s ease;
+}
+
+.cal-menu-item:hover {
+    background: rgba(212, 175, 55, 0.15);
+    color: #8C6318;
+}
+
+.cal-mini-icon {
+    font-size: 14px;
+}
+
+/* Miniature Cross Divider */
+.parchment-cross-divider.mini {
+    margin: 20px auto 16px;
+    width: 200px;
+    max-width: 75%;
+}
+
+/* ==========================================================================
+   FUTURE HOLY MATRIMONY NOTICE BOX (Parchment Card)
+   ========================================================================== */
+.future-matrimony-parchment-box {
+    width: 100%;
+    padding: 16px 14px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px dashed rgba(180, 140, 61, 0.45);
+    box-sizing: border-box;
+    margin-top: 4px;
+}
+
+.matrimony-dv-tag {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 9.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #9C7324;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.arabic-dua-text {
+    font-family: 'Amiri', 'Traditional Arabic', serif;
+    font-size: clamp(17px, 4.3vw, 21.5px);
+    font-weight: 700;
+    line-height: 1.7;
+    color: #7A5314;
+    text-align: center;
+    direction: rtl;
+    margin: 6px auto 8px;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9), 0 0 10px rgba(212, 175, 55, 0.25);
+}
+
+.matrimony-parchment-head {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: clamp(14px, 3.4vw, 16px);
+    font-weight: 600;
+    color: #8C6318;
+    margin: 0 0 5px 0;
+    letter-spacing: 0.04em;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.9);
+}
+
+.matrimony-parchment-notice {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(14px, 3.3vw, 16px);
+    line-height: 1.5;
+    color: #4A3525;
+    margin: 0;
+}
+
+.dua-cite {
+    display: inline-block;
+    margin-top: 5px;
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: #9C7324;
+    font-weight: 600;
+}
+
+.matrimony-parchment-notice strong {
+    color: #8C6318;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+/* ==========================================================================
+   SIMPLE HERITAGE FOOTER (Heritage Style)
+   ========================================================================== */
+.simple-invitation-footer {
+    max-width: var(--container-max-w);
+    margin: 30px auto 55px;
+    padding: 20px 16px;
+    text-align: center;
+}
+
+.footer-cross-icon {
+    width: 22px;
+    height: 30px;
+    margin: 0 auto 12px;
+    filter: drop-shadow(0 2px 6px rgba(180, 130, 40, 0.45));
+}
+
+.footer-cross-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.footer-cross-icon {
+    width: 24px;
+    height: 32px;
+    margin: 0 auto 10px;
+    opacity: 0;
+    transform: scale(0.6);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.simple-invitation-footer.revealed .footer-cross-icon,
+.revealed .footer-cross-icon {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.15s;
+}
+
+.footer-thank-you {
+    font-family: 'Cinzel', Georgia, serif;
+    font-size: clamp(21px, 5vw, 26px);
+    font-weight: 700;
+    color: #8C6318;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+    opacity: 0;
+    transform: translateY(22px) scale(0.93);
+    transition: opacity 1.15s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1.15s cubic-bezier(0.16, 1, 0.3, 1),
+                letter-spacing 1.15s cubic-bezier(0.16, 1, 0.3, 1),
+                text-shadow 1.15s ease;
+    will-change: transform, opacity;
+}
+
+.simple-invitation-footer.revealed .footer-thank-you,
+.revealed .footer-thank-you {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    letter-spacing: 0.16em;
+    transition-delay: 0.35s;
+    text-shadow: 0 1px 8px rgba(255, 255, 255, 0.95), 0 0 22px rgba(212, 175, 55, 0.6);
+    animation: goldShimmerText 3.6s ease-in-out infinite alternate 1.6s;
+}
+
+.footer-subtext {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(15px, 3.6vw, 17.5px);
+    font-style: italic;
+    color: #6E5338;
+    letter-spacing: 0.03em;
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform, opacity;
+}
+
+.simple-invitation-footer.revealed .footer-subtext,
+.revealed .footer-subtext {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.6s;
+    text-shadow: 0 1px 3px rgba(255, 255, 255, 0.8);
+}
+
+/* ==========================================================================
+   16. SCROLL REVEAL ANIMATIONS
+   ========================================================================== */
+.reveal-anim {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.reveal-anim.revealed {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   17. MOBILE RESPONSIVENESS & SCALING
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+    .front-artboard {
+        width: 100%;
+        max-width: 100vw;
+        height: 940px;
+    }
+
+    .artboard-bottom-water {
+        bottom: 0;
+        width: 744px;
+        height: 288px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .artboard-cross-seal {
+        top: 135px;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        margin: 0 !important;
+    }
+    
+    .artboard-christian-divider {
+        top: 668px;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 200px;
+        margin: 0 !important;
+    }
+
+    .artboard-ceremony-title {
+        font-size: 11px;
+        letter-spacing: 0.16em;
+        top: 172px;
+        max-width: 195px; /* Strictly inside mobile pillars */
+    }
+
+    .artboard-date-tag {
+        font-size: 10px;
+        letter-spacing: 0.20em;
+        top: 204px;
+        padding: 2.5px 10px;
+    }
+
+    .artboard-names-wrap {
+        top: 262px;
+        max-width: 195px; /* Inside mobile pillars */
+    }
+
+    .artboard-name-first,
+    .artboard-name-second {
+        font-family: 'Beau Rivage', 'Cormorant Garamond', cursive;
+        font-size: 32px;
+        font-weight: 400; /* STRICTLY NOT BOLD */
+        line-height: 1.05;
+    }
+
+    .artboard-amp {
+        font-size: 20px;
+        font-weight: 400;
+        margin: 1px 0;
+    }
+
+    .artboard-scroll-down {
+        top: 440px;
+    }
+
+    .artboard-scroll-label {
+        font-size: 10.5px;
+        letter-spacing: 0.14em;
+    }
+
+    .artboard-branch-left {
+        top: 500px;
+        width: 140px;
+        left: -10px;
+    }
+
+    .artboard-branch-right {
+        top: 480px;
+        width: 150px;
+        right: -12px;
+    }
+
+    .artboard-two-souls {
+        font-size: 13.5px;
+        top: 768px;
+        left: 0 !important;
+        right: 0 !important;
+        margin: 0 auto !important;
+        max-width: 290px;
+        line-height: 1.32;
+        letter-spacing: 0.05em;
+        text-align: center;
+    }
+
+    .artboard-two-souls.revealed .soul-bismillah {
+        font-size: 16.5px;
+        line-height: 1.38;
+        margin-bottom: 2px;
+    }
+
+    .artboard-two-souls.revealed .soul-line-1,
+    .artboard-two-souls.revealed .soul-line-2,
+    .artboard-two-souls.revealed .soul-line-3 {
+        font-size: 12.8px;
+        line-height: 1.3;
+    }
+
+    .section-countdown-artboard {
+        min-height: 210px;
+        padding: 26px 12px 28px;
+    }
+
+    .countdown-artboard-title {
+        font-size: 22px;
+        margin-bottom: 12px;
+    }
+
+    .number-wrap {
+        height: 32px;
+    }
+
+    .number {
+        font-size: 22px;
+    }
+
+    .time-block {
+        min-width: 42px;
+    }
+
+    .separator {
+        font-size: 18px;
+        margin-top: -10px;
+    }
+
+    .label {
+        font-size: 9.5px;
+        letter-spacing: 0.08em;
+    }
+
+    .countdown-date-subtext {
+        font-size: 11px;
+        letter-spacing: 0.04em;
+        margin-top: 10px;
+    }
+
+    /* Mobile adjustments for Sacred Deckled Parchment Lineage */
+    .section-parchment-lineage {
+        margin: 32px auto 55px;
+        padding: 0 8px;
+    }
+
+    .parchment-lineage-container {
+        min-height: 720px;
+        padding: 85px 22px 95px;
+    }
+
+    .parchment-flower-top {
+        top: -62px;
+        right: -18px;
+        width: 148px;
+    }
+
+    .parchment-flower-bottom {
+        bottom: -92px;
+        left: -32px;
+        width: 148px;
+    }
+
+    .parchment-lineage-content {
+        max-width: 340px;
+    }
+
+    .lineage-name-script {
+        font-size: 42px;
+        margin-bottom: 6px;
+    }
+
+    .lineage-parents-line {
+        font-size: clamp(12px, 3.3vw, 14px);
+        margin-bottom: 6px;
+        white-space: nowrap;
+    }
+
+    .lineage-address-line {
+        font-size: 13.5px;
+        line-height: 1.45;
+    }
+
+    .parchment-cross-divider {
+        margin: 20px auto 16px;
+        width: 170px;
+    }
+
+    .left-slide-block {
+        transform: translateX(-30px);
+    }
+
+    .right-slide-block {
+        transform: translateX(30px);
+    }
+
+    /* Mobile adjustments for Section 5: Sacred Event & Venues Parchment */
+    .section-parchment-event {
+        margin: 32px auto 55px;
+        padding: 0 8px;
+    }
+
+    .parchment-event-container {
+        min-height: 800px;
+        padding: 85px 26px 95px;
+    }
+
+    .parchment-event-content {
+        max-width: 290px;
+    }
+
+    .date-day-name {
+        font-size: 16.5px;
+        letter-spacing: 0.22em;
+    }
+
+    .date-number {
+        font-size: 52px;
+    }
+
+    .date-month-year {
+        font-size: 12px;
+        letter-spacing: 0.18em;
+    }
+
+    .service-venue-name {
+        font-size: 15.5px;
+    }
+
+    .service-venue-sub {
+        font-size: 13px;
+    }
+
+    .parchment-action-buttons {
+        gap: 8px;
+    }
+
+    .btn-parchment-pill {
+        padding: 9px 14px;
+        font-size: 10px;
+    }
+
+    .matrimony-parchment-head {
+        font-size: 13.5px;
+    }
+
+    .matrimony-parchment-notice {
+        font-size: 13px;
+    }
+}
